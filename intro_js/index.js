@@ -1,3 +1,121 @@
+//1 + 2 + 3 + ... + n
+const calculoRapidinho = (n) => {
+  return n > 0 ? 
+          Promise.resolve((n / 2) * (n + 1)) :
+          Promise.reject('Somente valores positivos')
+}
+calculoRapidinho(-1000)
+.then((res) => {
+  calculoRapidinho(res)
+  .then(res2 =>{
+    calculoRapidinho(res2)
+    .then((res3) =>{
+      calculoRapidinho(res4)
+      .then((res5) => {
+        console.log(res5)
+      })
+    })
+  })
+})
+.catch(function(erro){
+  console.log(`Erro: ${erro}`)
+})
+// function calculoDemorado(n){
+//   const p = new Promise((resolve, reject) => {
+//     if(n > 0){
+//       let ac = 0
+//       for(let i = 1; i <= n; i++)
+//         ac += i
+//       resolve(ac)
+//     }
+//     else{
+//       reject('Somente valores positivos, por favor')
+//     }
+//   })
+//   return p
+// }
+
+// const minhaPromise = calculoDemorado(1000)
+// minhaPromise
+// .then((res) => {
+//   console.log(`Resultado: ${res}`)
+// })
+// .catch((erro) => {
+//   console.log(`Erro: ${erro}`)
+// })
+
+// console.log("Fim do script...")
+
+
+// const fs = require('fs')
+// const abrirArquivo = (nomeArquivo) => {
+//   //callback
+//   const exibirConteudo = (erro, conteudo) => {
+//     console.log('C')
+//     if(erro){
+//       console.log(`Deu erro: ${erro}`)
+//     }
+//     else{
+//       console.log(`Conteúdo: ${conteudo.toString()}`)
+//       const dobro = Number(conteudo.toString()) * 2
+//       const finalizar = (erro) => {
+//         console.log('D')
+//         if(erro)
+//           console.log(`Erro: ${erro}`)
+//         else{
+//           const escreverResultado = (erro){
+//             console.log(erro ? 'Erro' : 'Sem erro')
+//           }
+//           fs.writeFile('resultado.txt', "Tudo ok", escreverResultado)
+//         }
+//       }
+//       fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+//       console.log('B')
+//     }
+//   }
+//   fs.readFile(nomeArquivo, exibirConteudo)
+//   console.log('A')
+// }
+// abrirArquivo("arquivo.txt")
+
+// function demorada(tempo){
+//   const dataAtualMaisTempo = new Date().getTime() + tempo
+//   while(new Date().getTime() <= dataAtualMaisTempo);
+//   const d = 8 + 4
+//   return d
+// }
+// setTimeout(() => {
+//   demorada(2000)
+//   console.log(`Demora: ${2000}`)
+// }, 2000)
+
+// setTimeout(() => {
+//   demorada(10000)
+//   console.log(`Demora: ${1000}`)
+// }, 1000)
+
+
+// console.log('Fim do script principal...')
+
+// const a = 2 + 5
+// const b = 6 + 3 - 2
+
+// setTimeout(() => {
+//   const d = demorada()
+//   console.log(`d: ${d}`)
+// }, 0)
+
+// const e = a + b * 2
+// console.log(`e: ${e}`)
+
+// const a = 2 + 7 * 2
+// const b = 5 * 6 + 1
+// console.log(a + b)
+
+// console.log("Eu primeiro...")
+// console.log("Agora eu...")
+// console.log("Serei sempre a última...:(")
+
 // JSON: JavaScript Object Notation
 //Uma calculadora faz as quatro operações fundamentais
 //A soma deve ser uma função comum com function
