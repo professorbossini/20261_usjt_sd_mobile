@@ -1,25 +1,52 @@
-//1 + 2 + 3 + ... + n
-const calculoRapidinho = (n) => {
-  return n > 0 ? 
-          Promise.resolve((n / 2) * (n + 1)) :
-          Promise.reject('Somente valores positivos')
-}
-calculoRapidinho(-1000)
-.then((res) => {
-  calculoRapidinho(res)
-  .then(res2 =>{
-    calculoRapidinho(res2)
-    .then((res3) =>{
-      calculoRapidinho(res4)
-      .then((res5) => {
-        console.log(res5)
-      })
-    })
-  })
-})
-.catch(function(erro){
-  console.log(`Erro: ${erro}`)
-})
+https://openweathermap.org/
+// const calculoRapidinho = (n) => {
+//   return n > 0 
+//           ? Promise.resolve((n / 2) * (n + 1))
+//           : Promise.reject('Somente positivos')
+// }
+// calculoRapidinho(-10)
+// .then((res) => console.log(`Resultado: ${res}`))
+// .catch((erro) => console.log(`Erro: ${erro}`))
+
+// console.log('Script principal terminando...')
+// function calculoDemorado(n){
+//   return new Promise((resolve, reject) => {
+//     let ac = 0
+//     for(let i = 1; i <= n; i++)
+//       ac += i
+//     resolve(ac)
+//   })
+
+// }
+// const minhaPromise = calculoDemorado(10)
+// minhaPromise.then((res) => {
+//   console.log("Resultado: " + res)
+// })
+// console.log('Terminando o script principal...')
+
+
+
+// const calculoRapidinho = (n) => {
+//   return n > 0 ? 
+//           Promise.resolve((n / 2) * (n + 1)) :
+//           Promise.reject('Somente valores positivos')
+// }
+// calculoRapidinho(-1000)
+// .then((res) => {
+//   calculoRapidinho(res)
+//   .then(res2 =>{
+//     calculoRapidinho(res2)
+//     .then((res3) =>{
+//       calculoRapidinho(res4)
+//       .then((res5) => {
+//         console.log(res5)
+//       })
+//     })
+//   })
+// })
+// .catch(function(erro){
+//   console.log(`Erro: ${erro}`)
+// })
 // function calculoDemorado(n){
 //   const p = new Promise((resolve, reject) => {
 //     if(n > 0){
